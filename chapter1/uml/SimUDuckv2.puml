@@ -1,0 +1,37 @@
+@startuml
+
+title 飛ぶ動作とゴム製アヒルの追加
+
+abstract class Duck {
+    quack()
+    swim()
+    display()
+    fly()
+}
+note left : Duckクラスにflyメソッドを追加
+
+class MallardDuck {
+    display()
+}
+
+class RedheadDuck {
+    display()
+}
+
+class RubberDuck {
+    display()
+    quack()
+    fly() // オーバーライドして何もしないようにする
+}
+note right of RubberDuck
+ ゴム製のアヒルは飛ぶ必要がない
+end note
+
+RubberDuck  -up-|> Duck
+MallardDuck -up-|> Duck
+RedheadDuck -up-|> Duck
+RubberDuck -[hidden]left- RedheadDuck
+MallardDuck -[hidden]left- RedheadDuck
+
+
+@enduml

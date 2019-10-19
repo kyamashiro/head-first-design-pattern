@@ -1,0 +1,22 @@
+@startuml
+
+title はじめの状態
+
+abstract class Duck {
+    quack()
+    swim()
+    display()
+}
+
+class MallardDuck {
+    display()
+}
+
+class RedheadDuck {
+    display()
+}
+
+MallardDuck -up-|> Duck
+RedheadDuck -up-|> Duck
+
+@enduml

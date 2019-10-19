@@ -1,0 +1,44 @@
+@startuml
+
+title 振る舞いを設計する
+
+interface FlyBehavior {
+    fly()
+}
+
+class FlyWithWings {
+    fly()
+}
+note bottom : 実際に飛ぶ振る舞い
+
+class FlyNoWay {
+    fly()
+}
+note bottom : 実際には飛ばない
+
+FlyWithWings .up.|> FlyBehavior
+FlyNoWay .up.|> FlyBehavior
+
+interface QuackBehavior {
+    quack()
+}
+
+class Quack {
+    quack()
+}
+note bottom : 実際に鳴く
+
+class Squack {
+    quack()
+}
+
+class MuteQuack {
+    quack()
+}
+
+Quack .up.|> QuackBehavior
+Squack .up.|> QuackBehavior
+MuteQuack .up.|> QuackBehavior
+
+
+@enduml

@@ -1,0 +1,58 @@
+@startuml
+
+title 継承ではなくインターフェースに変更した場合
+
+
+
+interface Flyable {
+    fly()
+}
+
+interface Quackable {
+    quack()
+}
+
+note as N
+  これらの振る舞いに対してコードを再利用できない
+end note
+
+N .. Quackable
+N .. Flyable
+
+abstract class Duck {
+    display()
+    swim()
+}
+
+class MallardDuck {
+    display()
+    quack()
+    fly()
+}
+
+class RedheadDuck {
+        display()
+        quack()
+        fly()
+}
+
+class RubberDuck {
+    display()
+    quack()
+}
+
+RubberDuck  -up-|> Duck
+
+MallardDuck -up-|> Duck
+MallardDuck .up.|> Quackable
+MallardDuck .up.|> Flyable
+
+RedheadDuck -up-|> Duck
+RedheadDuck .up.|> Quackable
+RedheadDuck .up.|> Flyable
+
+RubberDuck -[hidden]left- RedheadDuck
+MallardDuck -[hidden]left- RedheadDuck
+
+
+@enduml

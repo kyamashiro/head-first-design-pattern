@@ -1,0 +1,77 @@
+@startuml
+
+title カプセル化された振る舞いの全体像
+
+package Client <<Rectangle>> {
+    abstract Duck {
+        QuackBehavior: quackBehavior
+        FlyBehavior: flyBehavior
+        swim()
+        display()
+        performQuack()
+        performFly()
+    }
+
+    class MallardDuck {
+        display()
+    }
+
+    class RedheadDuck {
+        display()
+    }
+
+    class RubberDuck {
+        display()
+    }
+
+    RubberDuck  -up-|> Duck
+    MallardDuck -up-|> Duck
+    RedheadDuck -up-|> Duck
+    RubberDuck -[hidden]left- RedheadDuck
+    MallardDuck -[hidden]left- RedheadDuck
+}
+
+package カプセル化された飛ぶ振る舞い <<Rectangle>> {
+    interface FlyBehavior {
+        fly()
+    }
+
+    class FlyWithWings {
+        fly()
+    }
+
+    class FlyNoWay {
+        fly()
+    }
+
+    FlyWithWings .up.|> FlyBehavior
+    FlyNoWay .up.|> FlyBehavior
+}
+
+package カプセル化された鳴く振る舞い <<Rectangle>> {
+    interface QuackBehavior {
+        quack()
+    }
+
+    class Quack {
+        quack()
+    }
+
+    class Squeak {
+        quack()
+    }
+
+    class MuteQuack {
+        quack()
+    }
+
+    Quack .up.|> QuackBehavior
+    Squeak .up.|> QuackBehavior
+    MuteQuack .up.|> QuackBehavior
+}
+
+Duck --|> FlyBehavior
+Duck --|> QuackBehavior
+Duck -[hidden]left- FlyBehavior
+
+@enduml
