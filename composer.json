@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Chapter1\\": "chapter1"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "7.*"
+  }
+}

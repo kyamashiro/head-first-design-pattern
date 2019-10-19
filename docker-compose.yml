@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  php-apache:
+    build: ./
+    container_name: php-apache
+    ports:
+      - 80:80
+    volumes:
+      - .:/var/www/html
