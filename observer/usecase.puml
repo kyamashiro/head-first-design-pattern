@@ -1,0 +1,74 @@
+@startuml
+
+title 気象観測所の設計
+
+interface Subject {
+    void registerObserver(Observer $observer)
+    void removeObserver(Observer $observer)
+    void notifyObservers()
+}
+
+interface Observer {
+    void update(float $temperature, float $humidity, float $pressure)
+}
+
+interface DisplayElement {
+    void display()
+}
+
+class WeatherData {
+    - $observers : Observer[]
+    - $temperature : float
+    - $humidity : float
+    - $pressure : float
+    void registerObserver(Observer $observer)
+    void removeObserver(Observer $observer)
+    void notifyObservers()
+    float getTemplature()
+    float getHumidity()
+    float getPressure()
+    void measurementsChanged()
+}
+
+class CurrentConditionsDisplay {
+    - $weatherData : Subject
+    - $temperature : float
+    - $humidity : float
+    void update(float $temperature, float $humidity, float $pressure)
+    void display()
+}
+
+class StatisticsDisplay {
+    void update(float $temperature, float $humidity, float $pressure)
+    void display()
+}
+
+class ThirdPartyDisplay {
+    void update(float $temperature, float $humidity, float $pressure)
+    void display()
+}
+
+class ForecastDisplay {
+    void update(float $temperature, float $humidity, float $pressure)
+    void display()
+}
+
+WeatherData .up.|> Subject
+Subject -right-> Observer : observers
+CurrentConditionsDisplay .up.|> Observer
+CurrentConditionsDisplay .up.|> DisplayElement
+ForecastDisplay .up.|> Observer
+ForecastDisplay .up.|> DisplayElement
+StatisticsDisplay .up.|> Observer
+StatisticsDisplay .up.|> DisplayElement
+ThirdPartyDisplay .up.|> Observer
+ThirdPartyDisplay .up.|> DisplayElement
+
+CurrentConditionsDisplay -left-> WeatherData : subject
+
+DisplayElement -[hidden]left- Observer
+StatisticsDisplay -[hidden]left- CurrentConditionsDisplay
+ForecastDisplay -[hidden]left- CurrentConditionsDisplay
+ThirdPartyDisplay -[hidden]left- CurrentConditionsDisplay
+
+@enduml

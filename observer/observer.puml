@@ -1,0 +1,39 @@
+@startuml
+
+title Observerパターン
+
+interface Subject {
+    registerObserver()
+    removeObserver()
+    notifyObservers()
+}
+note left
+ オブジェクトはSubjectインターフェースを通して
+ オブザーバとしての登録や削除を行う
+end note
+
+interface Observer {
+    update()
+}
+note right
+ updateメソッドはSubjectの状態が変わると呼び出される
+end note
+
+class ConcreteSubject {
+    registerObserver()
+    removeObserver()
+    notifyObserver()
+    getState()
+    setState()
+}
+
+class ConcreteObserver {
+    update()
+}
+
+ConcreteSubject .up.|> Subject
+ConcreteObserver .up.|> Observer
+Subject -right-> Observer : 複数のオブザーバを持てる
+ConcreteObserver -left-> ConcreteSubject
+
+@enduml

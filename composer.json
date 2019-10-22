@@ -1,7 +1,8 @@
 {
   "autoload": {
     "psr-4": {
-      "Chapter1\\": "chapter1"
+      "Chapter1\\": "chapter1",
+      "Observer\\": "observer"
     }
   },
   "require-dev": {
