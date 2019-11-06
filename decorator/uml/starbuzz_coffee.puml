@@ -1,0 +1,45 @@
+@startuml
+
+title スターバズコーヒー最初の実装
+
+abstract class Beverage {
+    description
+    getDescription()
+    cost()
+}
+note left
+ Beverageは抽象クラスであり、
+ 独自の実装をサブクラスで定義する
+end note
+
+class HouseBlend {
+    cost()
+}
+
+class DarkRoast {
+    cost()
+}
+
+class Decafe {
+    cost()
+}
+
+class Espresso {
+    cost()
+}
+
+note as N
+各サブクラスはcost()を実装して飲み物の料金を実装する
+end note
+
+HouseBlend.. N
+DarkRoast .. N
+Decafe .. N
+Espresso .. N
+
+Beverage <|-- HouseBlend
+Beverage <|-- DarkRoast
+Beverage <|-- Decafe
+Beverage <|-- Espresso
+
+@enduml
