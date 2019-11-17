@@ -1,0 +1,46 @@
+@startuml
+
+title 継承の悪夢
+
+abstract class Beverage {
+    description
+    milk
+    soy
+    mocha
+    whip
+    getDescription()
+    cost()
+
+    hasMilk()
+    setmilk()
+    hasSoy()
+    setSoy()
+    // etc...()
+}
+note left
+ 継承を使ってトッピングの種類を増やすの
+ うまく機能しない
+end note
+
+class HouseBlend {
+    cost()
+}
+
+class DarkRoast {
+    cost()
+}
+
+class Decafe {
+    cost()
+}
+
+class Espresso {
+    cost()
+}
+
+Beverage <|-- HouseBlend
+Beverage <|-- DarkRoast
+Beverage <|-- Decafe
+Beverage <|-- Espresso
+
+@enduml

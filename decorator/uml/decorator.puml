@@ -1,0 +1,84 @@
+@startuml
+
+title Decoratorパターンの例
+
+abstract class Beverage {
+    description
+    getDescription()
+    cost()
+}
+
+abstract CondientDecorator {
+    getDescription()
+}
+
+class HouseBlend {
+    cost()
+}
+
+class DarkRoast {
+    cost()
+}
+
+class Decafe {
+    cost()
+}
+
+class Espresso {
+    cost()
+}
+
+note as Component
+飲み物の具象コンポーネント
+end note
+
+class Milk {
+    Beverage beverage
+    cost()
+    getDescription()
+}
+
+class Mocha {
+    Beverage beverage
+    cost()
+    getDescription()
+}
+
+class Soy {
+    Beverage beverage
+    cost()
+    getDescription()
+}
+
+class Whip {
+    Beverage beverage
+    cost()
+    getDescription()
+}
+
+note as Decorator
+トッピングデコレータ
+end note
+
+HouseBlend.. Component
+DarkRoast .. Component
+Decafe .. Component
+Espresso .. Component
+
+Milk.. Decorator
+Mocha.. Decorator
+Whip.. Decorator
+Soy.. Decorator
+
+Beverage <-left- CondientDecorator
+CondientDecorator <|-- Milk
+CondientDecorator <|-- Mocha
+CondientDecorator <|-- Whip
+CondientDecorator <|-- Soy
+
+Beverage <|-- HouseBlend
+Beverage <|-- DarkRoast
+Beverage <|-- Decafe
+Beverage <|-- Espresso
+
+@enduml
