@@ -8,9 +8,17 @@ abstract class Beverage {
     cost()
 }
 
+note left
+ 抽象コンポーネント
+end note
+
 abstract CondientDecorator {
     getDescription()
 }
+
+note right
+ 抽象デコレータ
+end note
 
 class HouseBlend {
     cost()
@@ -57,7 +65,7 @@ class Whip {
 }
 
 note as Decorator
-トッピングデコレータ
+トッピングの具象デコレータ
 end note
 
 HouseBlend.. Component
