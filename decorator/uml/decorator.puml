@@ -78,7 +78,7 @@ Mocha.. Decorator
 Whip.. Decorator
 Soy.. Decorator
 
-Beverage <-left- CondientDecorator
+Beverage <-left-o CondientDecorator
 CondientDecorator <|-- Milk
 CondientDecorator <|-- Mocha
 CondientDecorator <|-- Whip
