@@ -16,8 +16,8 @@ abstract CondientDecorator {
     getDescription()
 }
 
-note right
- 抽象デコレータ
+note left
+抽象デコレータ
 end note
 
 class HouseBlend {
@@ -78,15 +78,16 @@ Mocha.. Decorator
 Whip.. Decorator
 Soy.. Decorator
 
-Beverage <-left-o CondientDecorator
+Beverage <-up-o CondientDecorator
+Beverage -[hidden]up-o CondientDecorator
 CondientDecorator <|-- Milk
 CondientDecorator <|-- Mocha
 CondientDecorator <|-- Whip
 CondientDecorator <|-- Soy
 
-Beverage <|-- HouseBlend
-Beverage <|-- DarkRoast
-Beverage <|-- Decafe
-Beverage <|-- Espresso
+Beverage <|--- HouseBlend
+Beverage <|--- DarkRoast
+Beverage <|--- Decafe
+Beverage <|--- Espresso
 
 @enduml
