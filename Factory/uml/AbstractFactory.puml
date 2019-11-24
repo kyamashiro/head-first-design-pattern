@@ -1,0 +1,55 @@
+@startuml
+
+interface PizzaIngredientFactory {
+    createDough()
+    createSauce()
+    createCheese()
+    createVeggies()
+    createPepperoni()
+    createClam()
+}
+
+interface NYPizzaIngredientFactory {
+    createDough()
+    createSauce()
+    createCheese()
+    createVeggies()
+    createPepperoni()
+    createClam()
+}
+
+class Pizza {
+    prepare()
+}
+
+interface Dough
+class ThinCrustDough
+
+interface Sauce
+class MarinaraSauce
+
+interface Cheese
+class ReggianoCheese
+
+interface Clams
+class FreshClams
+
+PizzaIngredientFactory <|----- NYPizzaIngredientFactory
+PizzaIngredientFactory <-left- Pizza
+
+Pizza <-- Dough
+Pizza <-- Sauce
+Pizza <-- Cheese
+Pizza <-- Clams
+
+Dough <|-- ThinCrustDough
+Sauce <|-- MarinaraSauce
+Cheese <|-- ReggianoCheese
+Clams <|-- FreshClams
+
+ThinCrustDough <--- NYPizzaIngredientFactory
+MarinaraSauce <--- NYPizzaIngredientFactory
+ReggianoCheese <--- NYPizzaIngredientFactory
+FreshClams <--- NYPizzaIngredientFactory
+
+@enduml

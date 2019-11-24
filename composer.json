@@ -2,11 +2,22 @@
   "autoload": {
     "psr-4": {
       "Chapter1\\": "chapter1",
-      "Observer\\": "observer",
-      "Decorator\\": "decorator"
+      "Observer\\": "Observer",
+      "Decorator\\": "Decorator",
+      "FactoryMethod\\": "Factory/FactoryMethod",
+      "AbstractFactory\\": "Factory/AbstractFactory",
+      "AbstractFactory\\Ingredient\\Dough\\": "Factory/AbstractFactory/Ingredient/Dough",
+      "AbstractFactory\\Ingredient\\Cheese\\": "Factory/AbstractFactory/Ingredient/Cheese",
+      "AbstractFactory\\Ingredient\\Clams\\": "Factory/AbstractFactory/Ingredient/Clams",
+      "AbstractFactory\\Ingredient\\Pepperoni\\": "Factory/AbstractFactory/Ingredient/Pepperoni",
+      "AbstractFactory\\Ingredient\\Sauce\\": "Factory/AbstractFactory/Ingredient/Sauce",
+      "AbstractFactory\\Ingredient\\Veggies\\": "Factory/AbstractFactory/Ingredient/Veggies"
     }
   },
   "require-dev": {
     "phpunit/phpunit": "7.*"
+  },
+  "require": {
+    "myclabs/php-enum": "^1.7"
   }
 }

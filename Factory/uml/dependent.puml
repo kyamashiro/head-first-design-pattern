@@ -1,0 +1,24 @@
+@startuml
+
+title DependentPizzaStore
+
+class PizzaStore
+class NyStyleCheesePizza
+class NyStylePepperoniPizza
+class NyStyleVeggiePizza
+class NyStyleClamPizza
+class ChicagoStyleCheesePizza
+class ChicagoStylePepperoniPizza
+class ChicagoStyleVeggiePizza
+class ChicagoStyleClamPizza
+
+PizzaStore <-- NyStyleCheesePizza
+PizzaStore <-- NyStylePepperoniPizza
+PizzaStore <-- NyStyleVeggiePizza
+PizzaStore <-- NyStyleClamPizza
+PizzaStore <-- ChicagoStyleCheesePizza
+PizzaStore <-- ChicagoStylePepperoniPizza
+PizzaStore <-- ChicagoStyleVeggiePizza
+PizzaStore <-- ChicagoStyleClamPizza
+
+@enduml

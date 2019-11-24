@@ -1,0 +1,33 @@
+@startuml
+
+title DependentPizzaStore
+
+abstract PizzaStore
+note left
+PizzaStoreは抽象クラスであるPizzaに依存する
+end note
+abstract Pizza
+note left
+Pizzaは抽象クラス
+具象PizzaクラスもPizzaに依存する
+end note
+class NyStyleCheesePizza
+class NyStylePepperoniPizza
+class NyStyleVeggiePizza
+class NyStyleClamPizza
+class ChicagoStyleCheesePizza
+class ChicagoStylePepperoniPizza
+class ChicagoStyleVeggiePizza
+class ChicagoStyleClamPizza
+
+Pizza <-down- PizzaStore
+Pizza <-- NyStyleCheesePizza
+Pizza <-- NyStylePepperoniPizza
+Pizza <-- NyStyleVeggiePizza
+Pizza <-- NyStyleClamPizza
+Pizza <-- ChicagoStyleCheesePizza
+Pizza <-- ChicagoStylePepperoniPizza
+Pizza <-- ChicagoStyleVeggiePizza
+Pizza <-- ChicagoStyleClamPizza
+
+@enduml
