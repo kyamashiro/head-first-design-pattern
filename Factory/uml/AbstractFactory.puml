@@ -9,7 +9,7 @@ interface PizzaIngredientFactory {
     createClam()
 }
 
-interface NYPizzaIngredientFactory {
+class NYPizzaIngredientFactory {
     createDough()
     createSauce()
     createCheese()
