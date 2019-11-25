@@ -11,7 +11,8 @@
       "AbstractFactory\\Ingredient\\Clams\\": "Factory/AbstractFactory/Ingredient/Clams",
       "AbstractFactory\\Ingredient\\Pepperoni\\": "Factory/AbstractFactory/Ingredient/Pepperoni",
       "AbstractFactory\\Ingredient\\Sauce\\": "Factory/AbstractFactory/Ingredient/Sauce",
-      "AbstractFactory\\Ingredient\\Veggies\\": "Factory/AbstractFactory/Ingredient/Veggies"
+      "AbstractFactory\\Ingredient\\Veggies\\": "Factory/AbstractFactory/Ingredient/Veggies",
+      "Singleton\\": "Singleton"
     }
   },
   "require-dev": {
