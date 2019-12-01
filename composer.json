@@ -12,7 +12,11 @@
       "AbstractFactory\\Ingredient\\Pepperoni\\": "Factory/AbstractFactory/Ingredient/Pepperoni",
       "AbstractFactory\\Ingredient\\Sauce\\": "Factory/AbstractFactory/Ingredient/Sauce",
       "AbstractFactory\\Ingredient\\Veggies\\": "Factory/AbstractFactory/Ingredient/Veggies",
-      "Singleton\\": "Singleton"
+      "Singleton\\": "Singleton",
+      "Command\\": "Command",
+      "Command\\Appliance\\Light": "Command/Appliance/Light",
+      "Command\\Appliance\\Stereo": "Command/Appliance/Stereo",
+      "Command\\Appliance\\CeilingFan": "Command/Appliance/CeilingFan"
     }
   },
   "require-dev": {
