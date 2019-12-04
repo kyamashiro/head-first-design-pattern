@@ -1,0 +1,39 @@
+@startuml
+
+title ハリウッドの原則
+
+abstract class CaffeineBeverage {
+    prepareRecipe()
+    boilWater()
+    pourInCup()
+    brew()
+    addCondiments()
+}
+
+note right
+高水準コンポーネント
+サブクラスを呼び出す
+end note
+
+class Coffee {
+    brew()
+    addCondiments()
+}
+
+class Tea {
+    brew()
+    addCondiments()
+}
+
+
+note as LowLayer
+TeaとCoffeeは抽象クラスのメソッドを直接呼び出すことはない
+end note
+
+Coffee ... LowLayer
+Tea ... LowLayer
+
+CaffeineBeverage <|-- Coffee
+CaffeineBeverage <|-- Tea
+
+@enduml
