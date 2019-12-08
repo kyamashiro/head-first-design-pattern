@@ -14,9 +14,11 @@
       "AbstractFactory\\Ingredient\\Veggies\\": "Factory/AbstractFactory/Ingredient/Veggies",
       "Singleton\\": "Singleton",
       "Command\\": "Command",
-      "Command\\Appliance\\Light": "Command/Appliance/Light",
-      "Command\\Appliance\\Stereo": "Command/Appliance/Stereo",
-      "Command\\Appliance\\CeilingFan": "Command/Appliance/CeilingFan"
+      "Command\\Appliance\\Light\\": "Command/Appliance/Light",
+      "Command\\Appliance\\Stereo\\": "Command/Appliance/Stereo",
+      "Command\\Appliance\\CeilingFan\\": "Command/Appliance/CeilingFan",
+      "Iterator\\": "Iterator",
+      "Composite\\": "Composite"
     }
   },
   "require-dev": {
